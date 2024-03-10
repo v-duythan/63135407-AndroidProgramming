@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHÉP TÍNH SỐ HỌC"
+        android:textSize="30dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhập a: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhập b: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber1"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/buttonCong"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cộng"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTru"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+    <Button
+        android:id="@+id/buttonTru"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Trừ"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNhan"
+        app:layout_constraintStart_toEndOf="@+id/buttonCong"
+        app:layout_constraintTop_toTopOf="@+id/buttonCong" />
+
+    <Button
+        android:id="@+id/buttonNhan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nhân"
+        app:layout_constraintEnd_toStartOf="@+id/buttonChia"
+        app:layout_constraintStart_toEndOf="@+id/buttonTru"
+        app:layout_constraintTop_toTopOf="@+id/buttonCong" />
+
+    <Button
+        android:id="@+id/buttonChia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Chia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonNhan"
+        app:layout_constraintTop_toTopOf="@+id/buttonCong" />
+
+    <TextView
+        android:id="@+id/textViewKQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kết quả: "
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCong" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewKQ"
+        app:layout_constraintTop_toTopOf="@+id/textViewKQ" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
