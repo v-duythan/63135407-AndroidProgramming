@@ -3,20 +3,24 @@ package vduythan.edu.ex_6_listviewdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<String> dsTenTinhThanhVN;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        ArrayList<String> dsTenTinhThanhVN = new ArrayList<>();
+        dsTenTinhThanhVN = new ArrayList<>();
 
         dsTenTinhThanhVN.add("Hà Nội");
         dsTenTinhThanhVN.add("TP Hồ Chí Minh");
@@ -34,5 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapterTinhThanh);
+
+        listView.setOnItemClickListener(boLangNgheVaXL);
     }
+    AdapterView.OnItemClickListener boLangNgheVaXL = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            String strTenTinhChon = dsTenTinhThanhVN.get(position);
+            Toast.makeText(MainActivity.this, "Bạn vừa chọn " + strTenTinhChon, Toast.LENGTH_LONG).show();
+        }
+    };
 }
