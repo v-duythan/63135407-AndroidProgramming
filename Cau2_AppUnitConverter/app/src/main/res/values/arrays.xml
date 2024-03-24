@@ -6,4 +6,10 @@
         <item>Inch</item>
         <item>Feet</item>
     </string-array>
+    <string-array name="weight_units">
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>Ounce</item>
+        <item>Pound</item>
+    </string-array>
 </resources>

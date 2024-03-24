@@ -3,7 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".WeightConvertActivity">
+    android:layout_height="match_parent">
+
+    <!-- TextView hiển thị tiêu đề -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Chuyển đổi đơn vị trọng lượng"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- EditText để nhập giá trị -->
+    <EditText
+        android:id="@+id/editTextInput"
+        android:layout_width="173dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
+        android:hint="Nhập giá trị"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
+
+    <!-- Spinner để chọn đơn vị đầu vào -->
+
+    <!-- Spinner để chọn đơn vị đầu ra -->
+
+    <Spinner
+        android:id="@+id/spinnerInputUnit"
+        android:layout_width="124dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="20dp"
+        android:entries="@array/weight_units"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextInput"
+        app:layout_constraintStart_toEndOf="@+id/editTextInput"
+        app:layout_constraintTop_toTopOf="@+id/editTextInput" />
+
+    <!-- Button để thực hiện chuyển đổi -->
+    <Spinner
+        android:id="@+id/spinnerOutputUnit"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/weight_units"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toStartOf="@+id/spinnerInputUnit"
+        app:layout_constraintTop_toBottomOf="@id/spinnerInputUnit" />
+
+    <Button
+        android:id="@+id/buttonConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Chuyển đổi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerOutputUnit" />
+
+    <!-- TextView để hiển thị kết quả -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerOutputUnit"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerOutputUnit"
+        app:layout_constraintStart_toStartOf="@+id/editTextInput"
+        app:layout_constraintTop_toTopOf="@+id/spinnerOutputUnit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

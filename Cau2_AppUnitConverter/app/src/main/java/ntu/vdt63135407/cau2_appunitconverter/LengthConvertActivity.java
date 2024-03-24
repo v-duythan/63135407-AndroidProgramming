@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ntu.vdt63135407.cau2_appunitconverter.R;
 
 public class LengthConvertActivity extends AppCompatActivity {
 
