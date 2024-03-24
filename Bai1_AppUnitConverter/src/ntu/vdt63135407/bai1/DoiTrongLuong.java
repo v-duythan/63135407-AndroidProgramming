@@ -2,10 +2,15 @@ package ntu.vdt63135407.bai1;
 
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,13 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.Font;
 
-public class DoiChieuDai extends JFrame {
+public class DoiTrongLuong extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -48,7 +48,7 @@ public class DoiChieuDai extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DoiChieuDai() {
+	public DoiTrongLuong() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();
@@ -71,59 +71,54 @@ public class DoiChieuDai extends JFrame {
         btnConvert.setBounds(169, 203, 100, 25);
         btnConvert.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                convertLength();
+            	convertWeight();
             }
 
-            private void convertLength() {
+            private void convertWeight() {
                 try {
                     // Lấy giá trị đầu vào từ text field
-                    double inputLength = Double.parseDouble(textFieldInput.getText());
+                    double inputWeight = Double.parseDouble(textFieldInput.getText());
 
                     // Lấy đơn vị đầu vào và đơn vị đầu ra từ combo box
                     String inputUnit = (String) comboInputUnit.getSelectedItem();
                     String outputUnit = (String) comboOutputUnit.getSelectedItem();
 
-                    // Chuyển đổi đơn vị từ inputUnit sang centimet
-                    double inputInCm = 0.0;
+                    // Chuyển đổi đơn vị từ inputUnit sang kilogram
+                    double inputInKg = 0.0;
                     switch (inputUnit) {
-                        case "Centimet":
-                            inputInCm = inputLength;
+                        case "Kilogam":
+                            inputInKg = inputWeight;
                             break;
-                        case "Met":
-                            inputInCm = inputLength * 100;
+                        case "Ounce":
+                            inputInKg = inputWeight * 0.0283495;
                             break;
-                        case "Inch":
-                            inputInCm = inputLength * 2.54;
-                            break;
-                        case "Yard":
-                            inputInCm = inputLength * 91.44;
+                        case "Pound":
+                            inputInKg = inputWeight * 0.453592;
                             break;
                     }
 
-                    // Chuyển đổi từ centimet sang đơn vị đầu ra
-                    double outputLength = 0.0;
+                    // Chuyển đổi từ kilogram sang đơn vị đầu ra
+                    double outputWeight = 0.0;
                     switch (outputUnit) {
-                        case "Centimet":
-                            outputLength = inputInCm;
+                        case "Kilogam":
+                            outputWeight = inputInKg;
                             break;
-                        case "Met":
-                            outputLength = inputInCm / 100;
+                        case "Ounce":
+                            outputWeight = inputInKg / 0.0283495;
                             break;
-                        case "Inch":
-                            outputLength = inputInCm / 2.54;
-                            break;
-                        case "Yard":
-                            outputLength = inputInCm / 91.44;
+                        case "Pound":
+                            outputWeight = inputInKg / 0.453592;
                             break;
                     }
 
                     // Hiển thị kết quả
-                    lblOutput.setText(String.format("%.2f", outputLength));
+                    lblOutput.setText(String.format("%.2f", outputWeight));
                 } catch (NumberFormatException ex) {
                     // Xử lý nếu người dùng nhập không đúng định dạng số
                     lblOutput.setText("Invalid input");
                 }
             }
+
 
         });
         contentPane.add(btnConvert);
@@ -150,16 +145,16 @@ public class DoiChieuDai extends JFrame {
         contentPane.add(btnBack);
         
         comboInputUnit = new JComboBox<String>();
-        comboInputUnit.setModel(new DefaultComboBoxModel<String>(new String[] {"Centimet", "Met", "Inch", "Yard"}));
+        comboInputUnit.setModel(new DefaultComboBoxModel<String>(new String[] {"Kilogam", "Ounce", "Pound"}));
         comboInputUnit.setBounds(279, 105, 84, 25);
         contentPane.add(comboInputUnit);
         
         comboOutputUnit = new JComboBox<String>();
-        comboOutputUnit.setModel(new DefaultComboBoxModel<String>(new String[] {"Met", "Inch", "Yard", "Centimet"}));
+        comboOutputUnit.setModel(new DefaultComboBoxModel<String>(new String[] {"Pound", "Ounce", "Kilogam"}));
         comboOutputUnit.setBounds(279, 156, 84, 25);
         contentPane.add(comboOutputUnit);
         
-        lblNewLabel = new JLabel("ĐỘ DÀI");
+        lblNewLabel = new JLabel("TRỌNG LƯỢNG");
         lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         lblNewLabel.setBounds(213, 39, 132, 19);
         contentPane.add(lblNewLabel);

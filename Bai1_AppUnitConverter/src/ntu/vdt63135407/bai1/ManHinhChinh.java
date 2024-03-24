@@ -67,6 +67,14 @@ public class ManHinhChinh extends JFrame {
 		contentPane.add(btnLength);
 		
 		JButton btnWeight = new JButton("Trọng lượng");
+		btnWeight.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				DoiTrongLuong weight = new DoiTrongLuong();
+				weight.setVisible(true);
+		        SwingUtilities.getWindowAncestor((Component)e.getSource()).setVisible(false);
+			}
+		});
 		btnWeight.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnWeight.setBounds(35, 183, 354, 46);
 		contentPane.add(btnWeight);
