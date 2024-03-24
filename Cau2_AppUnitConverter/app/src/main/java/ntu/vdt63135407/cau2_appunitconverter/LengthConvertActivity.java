@@ -96,7 +96,7 @@ public class LengthConvertActivity extends AppCompatActivity {
             }
 
             // Hiển thị kết quả
-            textViewResult.setText(String.format("%.2f %s", outputValue, outputUnit));
+            textViewResult.setText(String.format("%.2f", outputValue));
         } catch (NumberFormatException e) {
             // Xử lý nếu có lỗi khi nhập giá trị
             textViewResult.setText("Invalid input");
