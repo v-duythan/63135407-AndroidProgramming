@@ -59,7 +59,7 @@ public class LengthConvertActivity extends AppCompatActivity {
             String outputUnit = spinnerOutputUnit.getSelectedItem().toString();
 
             // Thực hiện chuyển đổi đơn vị
-            double outputValue = 0.0;
+            double outputValue = inputValue;
             if (inputUnit.equals("Centimet")) {
                 if (outputUnit.equals("Met")) {
                     outputValue = inputValue / 100;

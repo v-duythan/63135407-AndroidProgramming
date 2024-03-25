@@ -55,7 +55,7 @@ public class WeightConvertActivity extends AppCompatActivity {
             String outputUnit = spinnerOutputUnit.getSelectedItem().toString();
 
             // Thực hiện chuyển đổi đơn vị
-            double outputValue = 0.0;
+            double outputValue = inputValue;
             if (inputUnit.equals("Kilogram")) {
                 if (outputUnit.equals("Gram")) {
                     outputValue = inputValue * 1000;
