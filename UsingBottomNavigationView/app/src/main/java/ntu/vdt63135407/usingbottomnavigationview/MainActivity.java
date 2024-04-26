@@ -16,21 +16,17 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        // as soon as the application opens the first
-        // fragment should be shown to the user
-        // in this case it is algorithm fragment
+
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
-        // By using switch we can easily get
-        // the selected fragment
-        // by using there id.
+
         Fragment selectedFragment = null;
         int itemId = item.getItemId();
-        if (itemId == R.id.algorithm) {
+        if (itemId == R.id.home) {
             selectedFragment = new HomeFragment();
-        } else if (itemId == R.id.course) {
+        } else if (itemId == R.id.menu) {
             selectedFragment = new MenuFragment();
         } else if (itemId == R.id.profile) {
             selectedFragment = new ProfileFragment();
