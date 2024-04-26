@@ -1,9 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.UsingBottomNavigationView" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.UsingBottomNavigationView" parent="Base.Theme.UsingBottomNavigationView" />
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme">
+        <item name="colorPrimary">#FF00F5</item>  <item name="colorPrimaryDark">#E91E63</item>  <item name="colorAccent">#2196F3</item>  </style>
 </resources>
