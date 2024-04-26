@@ -27,8 +27,7 @@ public class LandScapeAdapter extends RecyclerView.Adapter<LandScapeAdapter.Item
     public ItemLandHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater cai_bom = LayoutInflater.from(context);
         View vItem = cai_bom.inflate(R.layout.item_land, parent, false);
-        ItemLandHolder viewholderCreated = new ItemLandHolder(vItem);
-        return viewholderCreated;
+        return new ItemLandHolder(vItem);
     }
 
     @Override
